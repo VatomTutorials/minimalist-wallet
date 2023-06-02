@@ -5,22 +5,15 @@ import './Common.css';
 //
 const WalletPage = () => {
 	const divRef = useRef(null);
-
 	const accessToken = "";
-	// const businessId  = "";
 	const businessId  = "vmVYSPtv7R";
-
+	//
 	useEffect(() => {
-		//console.log(import.meta.env.VITE_CLIENT_ID);
-		//console.log(import.meta.env.VITE_CLIENT_SECRET);
 		if (divRef.current) {
-			new VatomWallet(divRef.current, accessToken, businessId, {
-				baseUrl: "https://wallet.vatom.com"
-				// baseUrl: "https://wow.vatom.com"
-			});
+			new VatomWallet(divRef.current, accessToken, businessId);
 		}
 	}, [divRef]);
-
+	//
   return (
 		<div className="page_wrap_gp">
 			<div className="page_torso_gp" ref={divRef}/>
